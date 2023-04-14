@@ -1,6 +1,6 @@
 <?php
 // Retrieve sensor data from data.php
-$data_url = 'https://https://csmcewar-6131comp.azurewebsites.net/data.php';
+$data_url = 'https://csmcewar-6131comp.azurewebsites.net/data.php';
 $data = file_get_contents($data_url);
 ?>
 
