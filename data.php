@@ -1,7 +1,7 @@
 <?php
 if ($_SERVER['REQUEST_METHOD'] === 'GET') {
-    $temperature = $_GET['temp'];
-    $humidity = $_GET['humidity'];
+    $temperature = $_POST['temp'];
+    $humidity = $_POST['humidity'];
 
     echo 'Temperature: ' . $temperature . ' °C<br>';
     echo 'Humidity: ' . $humidity . ' %';
