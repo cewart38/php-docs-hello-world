@@ -1,6 +1,6 @@
 <?php
 if ($_SERVER['REQUEST_METHOD'] === 'GET') {
-    print_r($GET);
+    print_r("AHHH", $GET);
     $temperature = $_GET['temp'];
     $humidity = $_GET['humidity'];
 
