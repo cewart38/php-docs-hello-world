@@ -1,5 +1,5 @@
 <?php
-
+echo("Why wont you work");
 // Check if request method is POST
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
   // Get the JSON data from the request body
