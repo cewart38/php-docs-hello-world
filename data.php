@@ -1,12 +1,10 @@
 <?php
-		if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-			$temperature = $_POST['temperature'];
-			$humidity = $_POST['humidity'];
-
-
-			echo '<p>temperature: ' . $temperature . '</p>';
-			echo '<p>humidity: ' . $humidity . '</p>';
-		} else {
-			echo '<p>No POST request received.</p>';
-		}
-	?>
+		if ($_SERVER['REQUEST_METHOD'] == 'GET') {
+            // Retrieve data from GET request
+            $temperature = $_GET['temp'];
+            $humidity = $_GET['humidity'];
+            
+            // Echo data to webpage
+            echo "Temperature: " . $temperature . "<br>";
+            echo "Humidity: " . $humidity;
+            ?>
