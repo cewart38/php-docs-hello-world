@@ -3,6 +3,7 @@
 // Check if request method is POST
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
   // Get the JSON data from the request body
+  echo ("PLease work");
   $json_data = file_get_contents('php://input');
   echo $json_data;
   // Decode the JSON data into an associative array
