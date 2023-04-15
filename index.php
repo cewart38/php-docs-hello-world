@@ -1,10 +1,14 @@
 <?php
-// Retrieve data from GET request
-$temperature = $_GET['temp'];
-$humidity = $_GET['humidity'];
+if ($_SERVER['REQUEST_METHOD'] == 'GET') {
+    // Retrieve data from GET request
+    print_r($_GET);
+    $temperature = $_GET['temp'];
+    $humidity = $_GET['humidity'];
 
-// Display data on webpage
-echo "<h1>DHT11 Sensor Reading</h1>";
-echo "<p>Temperature: " . $temperature . " °C</p>";
-echo "<p>Humidity: " . $humidity . " %</p>";
+    // Echo data to webpage
+    echo "Temperature: " . $temperature . "<br>";
+    echo "Humidity: " . $humidity;
+} else {
+    echo ("AHHHHH");
+}
 ?>
