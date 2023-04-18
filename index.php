@@ -6,7 +6,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     // Print the data received
     foreach ($data as $value) {
-        echo $value . "<br>";
+        echo $value . "<br>" . "PLS";
     }
 } else {
     echo "No POST request received";
