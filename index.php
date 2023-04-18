@@ -1,9 +1,9 @@
 <?php
-if ($_SERVER['REQUEST_METHOD'] == 'GET') {
+if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     // Retrieve data from GET request
-    var_dump($_GET);
-    $temperature = $_GET['temp'];
-    $humidity = $_GET['humidity'];
+    var_dump($_POST);
+    $temperature = $_POST['temp'];
+    $humidity = $_POST['humidity'];
 
     // Echo data to webpage
     echo "Temperature: " . $temperature . "<br>";
