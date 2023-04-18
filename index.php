@@ -9,6 +9,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     echo "<p>Temperature: $temperature</p>";
     echo "<p>Humidity: $humidity</p>";
 } else {
-    echo "AHHHH";
+    echo "Not Receiving POST Request";
 }
 ?>
