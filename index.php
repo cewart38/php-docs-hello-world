@@ -1,10 +1,12 @@
 <?php
 // Get the POST data
 $data = file_get_contents("php://input");
-print_r($data);
+echo "POST data: " . $data . "<br>";
+
 
 // Decode the data into an associative array
 $values = json_decode($data, true);
+var_dump($values);
 
 // Print out the values
 echo "Temperature: " . $values['temperature'] . "<br>";
