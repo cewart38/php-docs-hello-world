@@ -8,7 +8,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         // JSON is valid
         $data = get_object_vars($decoded_data);
         foreach ($data as $value) {
-            echo $value . "<br>";
+            echo $value . "<br>" . "PLS";
         }
     } else {
         // JSON is invalid
