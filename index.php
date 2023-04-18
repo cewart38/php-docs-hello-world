@@ -1,8 +1,8 @@
 <?php
-if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+if ($_SERVER['REQUEST_METHOD'] == 'GET') {
     // Get the temperature and humidity data
-    $temperature = $_POST['temperature'];
-    $humidity = $_POST['humidity'];
+    $temperature = $_GET['temperature'];
+    $humidity = $_GET['humidity'];
 
     // Display the data
     echo "<h2>Temperature and Humidity Reading:</h2>";
