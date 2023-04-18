@@ -1,23 +1,21 @@
 <?php
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    $raw_data = file_get_contents('php://input');
-    $decoded_data = json_decode($raw_data);
+    // Retrieve the POST body and decode it as JSON
+    $data = json_decode(file_get_contents('php://input'), true);
 
-    if (json_last_error() === JSON_ERROR_NONE) {
-        // JSON is valid
-        $data = get_object_vars($decoded_data);
-        foreach ($data as $value) {
-            echo $value . "<br>" . "PLS";
-        }
-    } else {
-        // JSON is invalid
-        echo "Invalid JSON data";
+    // Print the data received
+    foreach ($data as $value) {
+        echo $value . "<br>";
     }
 } else {
     echo "No POST request received";
 }
 
 ?>
+
+
+
+
 
 
