@@ -1,14 +1,11 @@
 <?php
-if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-    // Retrieve data from GET request
-    var_dump($_POST);
-    $temperature = $_POST['temp'];
-    $humidity = $_POST['humidity'];
+// Get the POST data
+$data = file_get_contents("php://input");
 
-    // Echo data to webpage
-    echo "Temperature: " . $temperature . "<br>";
-    echo "Humidity: " . $humidity;
-} else {
-    echo ("AHHHHH");
-}
+// Decode the data into an associative array
+$values = json_decode($data, true);
+
+// Print out the values
+echo "Temperature: " . $values['temperature'] . "<br>";
+echo "Humidity: " . $values['humidity'] . "<br>";
 ?>
