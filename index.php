@@ -1,7 +1,7 @@
 <?php
 // Get the POST data
 $data = file_get_contents("php://input");
-print_r(data);
+print_r($data);
 
 // Decode the data into an associative array
 $values = json_decode($data, true);
