@@ -1,13 +1,18 @@
 <?php
-if ($_SERVER['REQUEST_METHOD'] == 'GET') {
-    // Retrieve data from GET request
-    $temperature = $_GET['temp'];
-    $humidity = $_GET['humidity'];
 
-    // Echo data to webpage
-    echo "Temperature: " . $temperature . "<br>";
-    echo "Humidity: " . $humidity;
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    // Retrieve the POST body and decode it as JSON
+    $data = json_decode(file_get_contents('php://input'), true);
+
+    // Print the data received
+    foreach ($data as $value) {
+        echo $value . "<br>";
+    }
 } else {
-    echo ("AHHHHH");
+    echo "No POST request received";
 }
+
 ?>
+
+
+
