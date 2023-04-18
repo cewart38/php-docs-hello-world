@@ -1,38 +1,18 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Display Data</title>
-</head>
-<body>
-    <?php
-    if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-        $raw_data = file_get_contents('php://input');
-        $decoded_data = json_decode($raw_data);
+<?php
 
-        if (json_last_error() === JSON_ERROR_NONE) {
-            // JSON is valid
-            $data = get_object_vars($decoded_data);
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    // Retrieve the POST body and decode it as JSON
+    $data = json_decode(file_get_contents('php://input'), true);
 
-            echo "<table border='1'>";
-            echo "<tr><th>Value 1</th><th>Value 2</th><th>Value 3</th></tr>";
-            echo "<tr>";
-            foreach ($data as $value) {
-                echo "<td>" . $value . "</td>";
-            }
-            echo "</tr>";
-            echo "</table>";
-        } else {
-            // JSON is invalid
-            echo "Invalid JSON data";
-        }
-    } else {
-        echo "No POST request received";
+    // Print the data received
+    foreach ($data as $value) {
+        echo $value . "<br>";
     }
-    ?>
-</body>
-</html>
+} else {
+    echo "No POST request received";
+}
 
-
+?>
 
 
 
