@@ -1,38 +1,11 @@
 <?php
-// database connection parameters
-$servername = "localhost";
-$password = "";
-$username = "root";
-$dbname = "6131COMP";
+$serverName = "localhost";
+$dBUserName = "root";
+$dBPassword = "";
+$dBName = "personalExpenses";
 
-// retrieve temperature and humidity readings from POST request
-$temperature = $_POST['temperature'];
-$humidity = $_POST['humidity'];
+$conn = mysqli_connect($serverName, $dBUserName, $dBPassword, $dBName);
 
-// create database connection
-$conn = new mysqli($servername, $username, $password, $dbname);
-
-// check for connection errors
-if ($conn->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
+if (! $conn) {
+    die("Connection failed: " . mysql_connect_error());
 }
-
-// prepare SQL statement to insert data into table
-$sql = "INSERT INTO readings (temperature, humidity) VALUES ('$temperature', '$humidity')";
-
-// execute SQL statement
-if ($conn->query($sql) === TRUE) {
-    echo "Data inserted successfully";
-} else {
-    echo "Error inserting data: " . $conn->error;
-}
-
-// close database connection
-$conn->close();
-?>
-
-
-
-
-
-
