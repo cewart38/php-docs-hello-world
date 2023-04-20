@@ -1,15 +1,16 @@
 <?php
 // database connection parameters
 $servername = "localhost";
+$password = "";
 $username = "root";
-$dbname = "readings";
+$dbname = "6131COMP";
 
 // retrieve temperature and humidity readings from POST request
 $temperature = $_POST['temperature'];
 $humidity = $_POST['humidity'];
 
 // create database connection
-$conn = new mysqli($servername, $username, "", $dbname);
+$conn = new mysqli($servername, $username, $password, $dbname);
 
 // check for connection errors
 if ($conn->connect_error) {
